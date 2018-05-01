@@ -9,7 +9,7 @@ cd Python-2.7.14
 # ac_cv_file__dev_ptmx=no
 # ac_cv_file__dev_ptc=no
 #Before configure, need to enable the expected modules in Python2.7.14/Modules/Setup.dist.
-#
+patch -p0 < ../Setup.dist.patch
 CONFIG_SITE=config.site ./configure --host=aarch64-linux-android --disable-ipv6 --prefix=$PWD/arm64_python CC=aarch64-linux-android-clang CFLAGS='-fPIE -fPIC' LDFLAGS='-pie' CPP=aarch64-linux-android-cpp --build=x86_64-pc-linux-gnu
 #Because NDK library is lacking of nl_langinfo API, there will be a compile fail
 #Python/pythonrun.c:307: undefined reference to `nl_langinfo'
