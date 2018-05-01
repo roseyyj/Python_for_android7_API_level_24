@@ -8,6 +8,8 @@ cd Python-2.7.14
 #Workaround is: add config.site with following content. 
 # ac_cv_file__dev_ptmx=no
 # ac_cv_file__dev_ptc=no
+#Before configure, need to enable the expected modules in Python2.7.14/Modules/Setup.dist.
+#
 CONFIG_SITE=config.site ./configure --host=aarch64-linux-android --disable-ipv6 --prefix=$PWD/arm64_python CC=aarch64-linux-android-clang CFLAGS='-fPIE -fPIC' LDFLAGS='-pie' CPP=aarch64-linux-android-cpp --build=x86_64-pc-linux-gnu
 make
 make install
