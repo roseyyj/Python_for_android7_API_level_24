@@ -8,6 +8,6 @@ cd Python-2.7.14
 #Workaround is: add config.site with following content. 
 # ac_cv_file__dev_ptmx=no
 # ac_cv_file__dev_ptc=no
-CONFIG_SITE=config.site ./configure --host=aarch64-linux-android --disable-ipv6 --prefix=/usr2/yijiangy/code_base/embedded_python/Python-2.7.14/arm64_python CC=aarch64-linux-android-gcc CFLAGS='-fPIE -fPIC' LDFLAGS='-pie' CPP=aarch64-linux-android-cpp --build=x86_64-pc-linux-gnu
+CONFIG_SITE=config.site ./configure --host=aarch64-linux-android --disable-ipv6 --prefix=/usr2/yijiangy/code_base/embedded_python/Python-2.7.14/arm64_python CC=aarch64-linux-android-clang CFLAGS='-fPIE -fPIC' LDFLAGS='-pie' CPP=aarch64-linux-android-cpp --build=x86_64-pc-linux-gnu
 make
 make install
