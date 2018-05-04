@@ -16,5 +16,12 @@ CONFIG_SITE=config.site ./configure --host=aarch64-linux-android --disable-ipv6 
 #Try to hardcode it as following
 # --loc_codeset = nl_langinfo(CODESET);
 # ++loc_codeset = "ASCII"; 
+#Install zlib
+cd Modules/zlib
+export PATH=$PATH:/usr/local/my-android-toolchain/bin
+export CC=aarch64-linux-android-clang
+export CFLAGS="-fno-strict-aliasing -fPIE -fPIC -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes"
+./configure --prefix=/usr2/yijiangy/code_base/zlib --eprefix=/usr2/yijiangy/code_base/zlib
 make
 make install
+
