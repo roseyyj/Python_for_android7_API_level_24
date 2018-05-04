@@ -25,7 +25,10 @@ cp example.c minigip.c test/
 export PATH=$PATH:/usr/local/my-android-toolchain/bin 
 export CC=aarch64-linux-android-clang 
 export CFLAGS="-fno-strict-aliasing -fPIE -fPIC -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes"
-./configure --prefix=/usr2/yijiangy/code_base/zlib --eprefix=/usr2/yijiangy/code_base/zlib
+./configure --prefix=/usr/local/zlib --eprefix=/usr/local/zlib
 make
-make install
+sudo -E make install
+cd ../../
+make 
+sudo -E make install
 
