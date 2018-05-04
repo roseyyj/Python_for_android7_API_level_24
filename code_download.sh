@@ -18,8 +18,12 @@ CONFIG_SITE=config.site ./configure --host=aarch64-linux-android --disable-ipv6 
 # ++loc_codeset = "ASCII"; 
 #Install zlib
 cd Modules/zlib
-export PATH=$PATH:/usr/local/my-android-toolchain/bin
-export CC=aarch64-linux-android-clang
+#zlib configure file has a bug which needs example.c and minigzip.c under the folder test. 
+#just quickly solve it by making a folder and copy the file
+mkdir test
+cp example.c minigip.c test/
+export PATH=$PATH:/usr/local/my-android-toolchain/bin 
+export CC=aarch64-linux-android-clang 
 export CFLAGS="-fno-strict-aliasing -fPIE -fPIC -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes"
 ./configure --prefix=/usr2/yijiangy/code_base/zlib --eprefix=/usr2/yijiangy/code_base/zlib
 make
