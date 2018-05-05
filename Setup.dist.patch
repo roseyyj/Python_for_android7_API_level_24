@@ -83,7 +83,7 @@
 +	-DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
 +	-L$(SSL)/lib -lssl -lcrypto
 +
-+_hashopenssl _hashopenssl.c \
++_hashlib _hashopenssl.c \
 +	-DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
 +	-L$(SSL)/lib -lssl -lcrypto
  
